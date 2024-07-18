@@ -1,50 +1,28 @@
-import React, { useState, useEffect } from "react";
-import "./WeatherForecast.css";
-import axios from "axios";
-import WeatherForecastDay from "./WeatherForecastDay";
+import React from "react";
+import WeatherIcon from "./WeatherIcon";
 
-export default function WeatherForecast(props) {
-  let [loaded, setLoaded] = useState(false);
-  let [forecast, setForecast] = useState(null);
+export default function WeatherForecastDay(props) {
+  function formatDay(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let day = date.getDay();
 
-  useEffect(() => {
-    setLoaded(false);
-  }, [props.data.city]);
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-  function handleResponse(response) {
-    setForecast(response.data.daily);
-    setLoaded(true);
+    return days[day];
   }
 
-  function load() {
-    let apiKey = "6975040fc193feta4f47d8af4o55baa9";
-    let city = props.data.city;
-    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
-
-    axios.get(apiUrl).then(handleResponse);
-  }
-
-  if (loaded) {
-    return (
-      <div className="WeatherForecast">
-        <div className="row">
-          {forecast.map(function (dailyForecast, index) {
-            if (index < 5) {
-              return (
-                <div className="col" key={index}>
-                  <WeatherForecastDay data={dailyForecast} />
-                </div>
-              );
-            } else {
-              return null;
-            }
-          })}
-        </div>
+  return (
+    <div className="WeatherForecastDay">
+      <div className="WeatherForecast-day">{formatDay(props.data.time)}</div>
+      <WeatherIcon code={props.data.condition.icon} />
+      <div className="WeatherForecast-temperatures">
+        <span className="WeatherForecast-temperature-max">
+          {Math.round(props.data.temperature.maximum)}°
+        </span>
+        <span className="WeatherForecast-temperature-min">
+          {Math.round(props.data.temperature.minimum)}°
+        </span>
       </div>
-    );
-  } else {
-    load();
-
-    return null;
-  }
+    </div>
+  );
 }
