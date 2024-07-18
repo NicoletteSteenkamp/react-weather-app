@@ -8,7 +8,7 @@ import './App.css';
     <div className="App">
       <div className="container">
       
-      <Weather />
+      <Weather defaultCity="Boksburg"/>
     <footer>
       This app is coded by <a href="https://github.com/NicoletteSteenkamp">Nicolette Steenkamp</a> and is open-sourced on{" "}
     <a href="https://github.com/NicoletteSteenkamp/weather-app-project" target="blank">Github </a>
