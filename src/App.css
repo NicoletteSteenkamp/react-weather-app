@@ -1,9 +1,9 @@
 .App {
     font-family: Roboto, arial, sans-serif;
-    border: 1px solid #ff9e7a;
+    border: 1px solid #f7946f;
    background: rgba(254, 201, 210, 0.5); 
     margin: 75px auto 18px auto;
-    max-width: 578px;
+    max-width: 700px;
     padding: 16px;
     border-radius: 4px;
   }
@@ -19,7 +19,7 @@
   .App input.form-control {
     margin-top: 30px;
     font-family: "Space Mono", monospace;
-    border-color: #ff9e7a;
+    border-color: #f6916c;
   }
   
   .btn-primary {
@@ -33,23 +33,12 @@
   }
   
   .btn-primary:hover {
-    background-color: #000;
+    background-color: #060606;
     color: #ef529c;
     border: #000;
   }
   
-  .geolocation {
-    margin-top: 30px;
-    margin-left: 20px;
-    padding: 4px 10px 4px 10px;
-    border-radius: 4px;
-    border-color: #c9eaf4;
-    background-color: #5da9bd;
-    color: #000;
-    border: none;
-    width: 38px;
-    height: 38px;
-  }
+  
   
   .geolocation:hover {
     background-color: #8083b3;
@@ -58,7 +47,7 @@
   }
   
   .App h1 {
-    color: #000;
+    color: #0b0b0b;
     font-size: 25px;
     font-family: "Press Start 2P", cursive;
     font-weight: 100;
@@ -81,23 +70,19 @@
   }
   
   footer {
-    color: #000;
-    background-color: #5da9bd;
+    color: #000000;
+    background-color: #69abbd;
     text-align: center;
     font-family: "Space Mono", monospace;
-    font-size: 13px;
+    font-size: 12px;
   }
   
-  .App canvas {
-    margin-top: 7px;
-    margin-right: 0px;
-    display: inline-block;
-  }
+ 
   
   .App .temperature {
     font-size: 64px;
     font-family: "Space Mono", monospace;
-    color: #000;
+    color: #242222;
     line-height: 64px;
     margin-left: 15px;
   }
@@ -110,11 +95,8 @@
     top: -34px;
     line-height: 1;
     margin-left: 5px;
-    color: #000;
+    color: #0e0d0d;
   }
   
-  iframe {
-    width: 505px;
-    height: 190px;
-  }
+ 
   

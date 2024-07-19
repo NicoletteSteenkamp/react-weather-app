@@ -11,7 +11,7 @@ import './App.css';
       <Weather defaultCity="Boksburg"/>
     <footer>
       This app is coded by <a href="https://github.com/NicoletteSteenkamp">Nicolette Steenkamp</a> and is open-sourced on{" "}
-    <a href="https://github.com/NicoletteSteenkamp/weather-app-project" target="blank">Github </a>
+    <a href="https://github.com/NicoletteSteenkamp/weather-app-project" target="blank">Github </a> deployed on {" "} <a href="https://daily-weathering.netlify.app/"target="_blank">Netlify</a>
     </footer> 
     </div>
     </div>
