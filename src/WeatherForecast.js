@@ -1,28 +1,52 @@
-import React from "react";
-import WeatherIcon from "./WeatherIcon";
+import React, { useState, useEffect } from "react";
+import "./WeatherForecast.css";
+import ForecastDay from "./WeatherForecastDay";
+import axios from "axios";
 
-export default function WeatherForecastDay(props) {
-  function formatDay(timestamp) {
-    let date = new Date(timestamp * 1000);
-    let day = date.getDay();
+export default function WeatherForecast(props) {
+  let [loaded, setLoaded] = useState(false);
+  let [forecastData, setForecastData] = useState(null);
 
-    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.coordinates]);
 
-    return days[day];
+  function handleResponse(response) {
+    setForecastData(response.data.daily);
+    setLoaded(true);
   }
 
-  return (
-    <div className="WeatherForecastDay">
-      <div className="WeatherForecast-day">{formatDay(props.data.time)}</div>
-      <WeatherIcon code={props.data.condition.icon} />
-      <div className="WeatherForecast-temperatures">
-        <span className="WeatherForecast-temperature-max">
-          {Math.round(props.data.temperature.maximum)}°
-        </span>
-        <span className="WeatherForecast-temperature-min">
-          {Math.round(props.data.temperature.minimum)}°
-        </span>
+  function load() {
+    let apiKey = "ae997t30869fc345038bf7f0abaao7e6";
+    let units = "metric";
+    let longitude = props.coordinates.longitude;
+    let latitude = props.coordinates.latitude;
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${latitude}&lon=${longitude}&key=${apiKey}&units=${units}`;
+
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  if (loaded) {
+    return (
+      <div className="WeatherForecast">
+        <div className="row">
+          {forecastData.map(function (dailyForecast, index) {
+            if (index < 6)
+              return (
+                <div className="col" key={index}>
+                  <ForecastDay data={dailyForecast} />
+                </div>
+              );
+            else {
+              return null;
+            }
+          })}
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    load();
+
+    return null;
+  }
 }

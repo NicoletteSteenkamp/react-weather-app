@@ -1,11 +1,120 @@
-.App{
-    max-width: 700px;
-    margin: 30px auto;
-    
-}
-
-.App footer{
-    font-size: 12px;
-    margin: 10px 0;
-
-}
+.App {
+    font-family: Roboto, arial, sans-serif;
+    border: 1px solid #ff9e7a;
+    background: #fec9d2;
+    margin: 75px auto 18px auto;
+    max-width: 578px;
+    padding: 16px;
+    border-radius: 4px;
+  }
+  
+  .App form {
+    margin-bottom: 20px;
+  }
+  
+  .col-8 {
+    padding-left: 0px;
+  }
+  
+  .App input.form-control {
+    margin-top: 30px;
+    font-family: "Space Mono", monospace;
+    border-color: #ff9e7a;
+  }
+  
+  .btn-primary {
+    margin-top: 30px;
+    font-family: "Space Mono", monospace;
+    font-weight: bold;
+    background-color: #ef529c;
+    color: #000;
+    border-color: #ef529c;
+    transition: 0.2s;
+  }
+  
+  .btn-primary:hover {
+    background-color: #000;
+    color: #ef529c;
+    border: #000;
+  }
+  
+  .geolocation {
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 4px 10px 4px 10px;
+    border-radius: 4px;
+    border-color: #c9eaf4;
+    background-color: #5da9bd;
+    color: #000;
+    border: none;
+    width: 38px;
+    height: 38px;
+  }
+  
+  .geolocation:hover {
+    background-color: #8083b3;
+    color: #5da9bd;
+    border: #000;
+  }
+  
+  .App h1 {
+    color: #000;
+    font-size: 25px;
+    font-family: "Press Start 2P", cursive;
+    font-weight: 100;
+    line-height: 60px;
+    margin: 0 0 8px 0;
+  }
+  
+  .App ul {
+    margin-bottom: 35px;
+    padding-left: 0px;
+    font-family: "Space Mono", monospace;
+  }
+  
+  .App li {
+    font-size: 20px;
+    font-weight: 100px;
+    line-height: 30px;
+    list-style: none;
+    color: #000;
+  }
+  
+  footer {
+    color: #000;
+    background-color: #5da9bd;
+    text-align: center;
+    font-family: "Space Mono", monospace;
+    font-size: 13px;
+  }
+  
+  .App canvas {
+    margin-top: 7px;
+    margin-right: 0px;
+    display: inline-block;
+  }
+  
+  .App .temperature {
+    font-size: 64px;
+    font-family: "Space Mono", monospace;
+    color: #000;
+    line-height: 64px;
+    margin-left: 15px;
+  }
+  
+  .App .unit {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Space Mono", monospace;
+    position: relative;
+    top: -34px;
+    line-height: 1;
+    margin-left: 5px;
+    color: #000;
+  }
+  
+  iframe {
+    width: 505px;
+    height: 190px;
+  }
+  

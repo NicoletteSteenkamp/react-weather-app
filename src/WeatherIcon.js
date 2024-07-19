@@ -1,31 +1,34 @@
 import React from "react";
-import { WeatherSvg } from "weather-icons-animated";
+import ReactAnimatedWeather from "react-animated-weather";
 
 export default function WeatherIcon(props) {
   const codeMapping = {
-    "clear-sky-day": "sunny",
-    "clear-sky-night": "clear-night",
-    "few-clouds-day": "partlycloudy",
-    "few-clouds-night": "partlycloudy",
-    "scattered-clouds-day": "cloudy",
-    "scattered-clouds-night": "cloudy",
-    "broken-clouds-day": "cloudy",
-    "broken-clouds-night": "cloudy",
-    "shower-rain-day": "rainy",
-    "shower-rain-night": "rainy",
-    "rain-day": "pouring",
-    "rain-night": "pouring",
-    "thunderstorm-day": "lightning-rainy",
-    "thunderstorm-night": "lightning-rainy",
-    "snow-day": "snowy",
-    "snow-night": "snowy",
-    "mist-day": "fog",
-    "mist-night": "fog",
+    "clear-sky-day": "CLEAR_DAY",
+    "clear-sky-night": "CLEAR_NIGHT",
+    "few-clouds-day": "PARTLY_CLOUDY_DAY",
+    "few-clouds-night": "PARTLY_CLOUDY_NIGHT",
+    "scattered-clouds-day": "PARTLY_CLOUDY_DAY",
+    "scattered-clouds-night": "PARTLY_CLOUDY_NIGHT",
+    "broken-clouds-day": "CLOUDY",
+    "broken-clouds-night": "CLOUDY",
+    "shower-rain-day": "RAIN",
+    "shower-rain-night": "RAIN",
+    "rain-day": "RAIN",
+    "rain-night": "RAIN",
+    "thunderstorm-day": "RAIN",
+    "thunderstorm-night": "RAIN",
+    "snow-day": "SNOW",
+    "snow-night": "SNOW",
+    "mist-day": "FOG",
+    "mist-night": "FOG",
   };
 
-  const weatherState = codeMapping[props.code];
-
   return (
-    <WeatherSvg state={weatherState} height={70} width={70} />
+    <ReactAnimatedWeather
+      icon={codeMapping[props.code]}
+      color="#E420D1"
+      size={props.size}
+      animate={true}
+    />
   );
 }

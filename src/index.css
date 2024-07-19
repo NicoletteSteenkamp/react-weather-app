@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+
+body {
+  background-color: #e9e4e4;
+  color: #6b7179;
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/134/276/original/pexels-dreamypixel-552789.jpg?1721378054");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #c9eaf4;
+}
+
+a {
+  text-decoration: none;
+  color: #375577;
+}
+a:hover {
+  color: #cc7f6a;
+}
