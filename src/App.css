@@ -1,7 +1,7 @@
 .App {
     font-family: Roboto, arial, sans-serif;
     border: 1px solid #ff9e7a;
-    background: #fec9d2;
+   background: rgba(254, 201, 210, 0.5); 
     margin: 75px auto 18px auto;
     max-width: 578px;
     padding: 16px;

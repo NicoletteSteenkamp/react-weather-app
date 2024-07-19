@@ -4,11 +4,11 @@ body {
   background-color: #e9e4e4;
   color: #6b7179;
   font-family: "Oswald", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/134/276/original/pexels-dreamypixel-552789.jpg?1721378054");
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #c9eaf4;
+ 
 }
 
 a {

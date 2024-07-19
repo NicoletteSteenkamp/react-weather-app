@@ -4,7 +4,7 @@
 }
 
 .forecast-day {
-  background-color: #f1f1f1;
+  background-color: #db8a3e;
   display: flex;
   margin: 12px 0;
   border-radius: 10px;
@@ -30,10 +30,10 @@
   align-content: space-around;
   text-align: center;
   padding: 10px;
-  background-color: #b6becb;
+  background-color: #696b6f;
   border-radius: 0 10px 10px 0;
   flex: 30%;
-  color: #ffffff;
+  color: #0b0b0b;
   font-size: 20px;
   border-right: solid 1px #b6becb;
 }

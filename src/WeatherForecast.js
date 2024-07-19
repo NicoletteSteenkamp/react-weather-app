@@ -4,8 +4,8 @@ import ForecastDay from "./WeatherForecastDay";
 import axios from "axios";
 
 export default function WeatherForecast(props) {
-  let [loaded, setLoaded] = useState(false);
-  let [forecastData, setForecastData] = useState(null);
+  const [loaded, setLoaded] = useState(false);
+  const [forecastData, setForecastData] = useState(null);
 
   useEffect(() => {
     setLoaded(false);
@@ -17,29 +17,28 @@ export default function WeatherForecast(props) {
   }
 
   function load() {
-    let apiKey = "ae997t30869fc345038bf7f0abaao7e6";
-    let units = "metric";
-    let longitude = props.coordinates.longitude;
-    let latitude = props.coordinates.latitude;
-    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${latitude}&lon=${longitude}&key=${apiKey}&units=${units}`;
+    const apiKey = "ae997t30869fc345038bf7f0abaao7e6";
+    const units = "metric";
+    const longitude = props.coordinates.longitude;
+    const latitude = props.coordinates.latitude;
+    const apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${latitude}&lon=${longitude}&key=${apiKey}&units=${units}`;
 
     axios.get(apiUrl).then(handleResponse);
   }
 
   if (loaded) {
+    
+    const forecasts = forecastData.slice(1, 7);
+
     return (
       <div className="WeatherForecast">
         <div className="row">
-          {forecastData.map(function (dailyForecast, index) {
-            if (index < 6)
-              return (
-                <div className="col" key={index}>
-                  <ForecastDay data={dailyForecast} />
-                </div>
-              );
-            else {
-              return null;
-            }
+          {forecasts.map(function (dailyForecast, index) {
+            return (
+              <div className="col" key={index}>
+                <ForecastDay data={dailyForecast} />
+              </div>
+            );
           })}
         </div>
       </div>
@@ -47,6 +46,6 @@ export default function WeatherForecast(props) {
   } else {
     load();
 
-    return null;
+    return <div>Loading...</div>;
   }
 }
